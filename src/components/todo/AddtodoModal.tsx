@@ -14,40 +14,37 @@ const AddtodoModal = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <Button className="bg-primary-gradient p-2 rounded-lg text-white">
+          Create Todo
+        </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] bg-white">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
+          <DialogTitle>Add Task</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Add Task that you want to finish.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
+        <form className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4 bg-white">
+            <Label htmlFor="title" className="text-right">
+              Title
             </Label>
-            <input
-              id="name"
-              defaultValue="Pedro Duarte"
-              className="col-span-3"
-            />
+            <Input id="title" required className="col-span-3" />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
+            <Label htmlFor="description" className="text-right">
+              Description
             </Label>
-            <Input
-              id="username"
-              defaultValue="@peduarte"
-              className="col-span-3"
-            />
+            <Input id="description" required className="col-span-3" />
           </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="description" className="text-right">
+              submit
+            </Label>
+          </div>
+        </form>
+        <DialogFooter></DialogFooter>
       </DialogContent>
     </Dialog>
   );
