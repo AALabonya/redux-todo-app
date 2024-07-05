@@ -5,7 +5,7 @@ const TodoContainer = () => {
     <div className="px-2.5 py-3.5 border rounded-md">
       <div className="flex justify-between rounded-md mb-5">
         <button className="bg-primary-gradient text-white rounded-lg p-2">
-          Add todo
+          Add todoco
         </button>
         <button className="bg-primary-gradient p-2 rounded-lg text-white">
           Filter
