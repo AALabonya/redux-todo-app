@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -11,6 +12,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 const AddtodoModal = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [priority, setPriority] = useState("");
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -40,7 +44,7 @@ const AddtodoModal = () => {
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="description" className="text-right">
-              submit
+              Save changes
             </Label>
           </div>
         </form>

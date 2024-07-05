@@ -1,11 +1,13 @@
 import AddtodoModal from "./AddtodoModal";
 import TodoCard from "./TodoCard";
+import { TodoFilter } from "./TodoFilter";
 
 const TodoContainer = () => {
   return (
     <div className="px-2.5 py-3.5 border rounded-md">
       <div className="flex justify-between rounded-md mb-5">
         <AddtodoModal />
+        <TodoFilter />
         {/* <button className="bg-primary-gradient p-2 rounded-lg text-white">
           Filter
         </button> */}
