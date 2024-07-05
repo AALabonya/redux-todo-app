@@ -20,7 +20,7 @@ const TodoContainer = () => {
         </div> */}
 
         {todos.map((item) => (
-          <TodoCard title={item.title} description={item.description} />
+          <TodoCard {...item} />
         ))}
       </div>
     </div>

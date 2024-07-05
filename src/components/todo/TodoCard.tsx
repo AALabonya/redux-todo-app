@@ -3,10 +3,11 @@ import { Button } from "../ui/button";
 import { useAppDispatch } from "@/redux/hooks";
 
 type TTodoCardProps = {
+  id: string;
   title: string;
   description: string;
 };
-const TodoCard = ({ title, description }: TTodoCardProps) => {
+const TodoCard = ({ title, description, id }: TTodoCardProps) => {
   const dispatch = useAppDispatch();
   return (
     <div className="bg-white rounded-md flex justify-between items-center p-3">
@@ -15,7 +16,7 @@ const TodoCard = ({ title, description }: TTodoCardProps) => {
       {/* <p>Time</p> */}
       <p>{description}</p>
       <div className="flex gap-5">
-        <Button onClick={() => dispatch(removeTodo)}>del</Button>
+        <Button onClick={() => dispatch(removeTodo(id))}>del</Button>
         <Button>edit</Button>
       </div>
     </div>
