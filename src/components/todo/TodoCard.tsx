@@ -10,9 +10,18 @@ type TTodoCardProps = {
 };
 const TodoCard = ({ title, description, id, isCompleted }: TTodoCardProps) => {
   const dispatch = useAppDispatch();
+
+  const toggleState = () => {
+    console.log("is working");
+  };
   return (
     <div className="bg-white rounded-md flex justify-between items-center p-3">
-      <input type="checkbox" name="" id="" />
+      <input
+        onClick={toggleState}
+        type="checkbox"
+        name="complete"
+        id="complete"
+      />
       <p>{title}</p>
       {/* <p>Time</p> */}
       <div>
