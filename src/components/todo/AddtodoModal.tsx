@@ -19,10 +19,11 @@ const AddtodoModal = () => {
   const [priority, setPriority] = useState("");
 
   const dispatch = useAppDispatch();
-  const randomId = Math.random().toString(36).split(".")[1];
-  // const randomId = Math.random().toString(36).substring(2, 10);
+
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const randomId = Math.random().toString(36).split(".")[1];
+    // const randomId = Math.random().toString(36).substring(2, 10);
     const taskDetails = {
       id: randomId,
       title: title,
