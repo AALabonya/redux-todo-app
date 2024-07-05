@@ -1,6 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+type TTodo = {
+  title: string;
+  description: string;
+  isCompleted: boolean;
+};
+
+type TInitialState = {
+  todos: TTodo[];
+};
+
+const initialState: TInitialState = {
   todos: [],
 };
 
@@ -9,7 +19,7 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      state.todos.push({});
+      state.todos.push({ ...action.payload, isCompleted: false });
     },
   },
 });
