@@ -1,11 +1,12 @@
 import TodoContainer from "@/components/todo/TodoContainer";
+import Container from "@/components/ui/Container";
 
 const Todo = () => {
   return (
-    <div>
-      <h1>My Todos</h1>
+    <Container>
+      <h3 className="text-xl font-medium py-2.5">My Todo Lists</h3>
       <TodoContainer />
-    </div>
+    </Container>
   );
 };
 export default Todo;
