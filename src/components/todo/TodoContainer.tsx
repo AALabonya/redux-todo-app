@@ -6,9 +6,15 @@ import { useGetTodosQuery } from "@/redux/api/api";
 
 const TodoContainer = () => {
   //from local state
-  const { todos } = useAppSelector((state) => state.todos);
+  // const { todos } = useAppSelector((state) => state.todos);
   //*From server
   const { data: todos, isLoading, isError } = useGetTodosQuery(undefined);
+  console.log(todos);
+
+  if (isLoading) {
+    return <p>......loading</p>;
+  }
+
   return (
     <div className="px-2.5 py-3.5 border rounded-md">
       <div className="flex justify-between rounded-md mb-5">

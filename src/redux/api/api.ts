@@ -12,6 +12,13 @@ export const baseApi = createApi({
         method: "GET",
       }),
     }),
+    addTodo: builder.mutation({
+      query: (categoryName) => ({
+        url: "/tasks",
+        method: "POST",
+        data: { category: categoryName },
+      }),
+    }),
   }),
 });
 
