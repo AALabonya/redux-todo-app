@@ -15,6 +15,20 @@ const AddtodoModal = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    // const randomId = Math.random().toString(36).split(".")[1];
+    // const randomId = Math.random().toString(36).substring(2, 10);
+
+    const taskData: ITodo = {
+      title,
+      description,
+      isCompleted: false,
+      priority: priority,
+    };
+    addTodo(taskData);
+  };
   return (
     <Dialog>
       <DialogTrigger asChild>
