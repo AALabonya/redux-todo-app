@@ -11,15 +11,15 @@ import {
 } from "../ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { log } from "console";
+import { useAppDispatch } from "@/redux/hooks";
 const AddtodoModal = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
-
+  const dispatch = useAppDispatch;
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log({ title, description });
+    dispatch();
 
     // const randomId = Math.random().toString(36).split(".")[1];
     // const randomId = Math.random().toString(36).substring(2, 10);
