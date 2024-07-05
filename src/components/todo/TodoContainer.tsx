@@ -18,11 +18,10 @@ const TodoContainer = () => {
         {/* <div className="bg-white rounded-md  items-center p-3 text-center flex justify-center">
           <p>There is task pending</p>
         </div> */}
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
-        <TodoCard />
+
+        {todos.map((item) => (
+          <TodoCard title={item.title} description={item.description} />
+        ))}
       </div>
     </div>
   );

@@ -1,4 +1,8 @@
-const TodoCard = () => {
+type TTodoCardProps = {
+  title: string;
+  description: string;
+};
+const TodoCard = ({ title, description }: TTodoCardProps) => {
   return (
     <div className="bg-white rounded-md flex justify-between items-center p-3">
       <input type="checkbox" name="" id="" />
