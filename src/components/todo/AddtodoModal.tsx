@@ -20,14 +20,6 @@ const AddtodoModal = () => {
     e.preventDefault();
     // const randomId = Math.random().toString(36).split(".")[1];
     // const randomId = Math.random().toString(36).substring(2, 10);
-
-    const taskData: ITodo = {
-      title,
-      description,
-      isCompleted: false,
-      priority: priority,
-    };
-    addTodo(taskData);
   };
   return (
     <Dialog>
@@ -43,7 +35,7 @@ const AddtodoModal = () => {
             Add Task that you want to finish.
           </DialogDescription>
         </DialogHeader>
-        <form className="grid gap-4 py-4">
+        <form onSubmit={onSubmit} className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4 bg-white">
             <Label htmlFor="title" className="text-right">
               Title
