@@ -45,7 +45,12 @@ const AddtodoModal = () => {
             <Label htmlFor="description" className="text-right">
               Description
             </Label>
-            <Input id="description" required className="col-span-3" />
+            <Input
+              id="description"
+              onBlur={(e) => setDescription(e.target.value)}
+              required
+              className="col-span-3"
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="description" className="text-right">
