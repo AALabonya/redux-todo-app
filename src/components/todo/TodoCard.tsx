@@ -1,4 +1,4 @@
-import { removeTodo } from "@/redux/features/todoSlice";
+import { removeTodo, toggleComplete } from "@/redux/features/todoSlice";
 import { Button } from "../ui/button";
 import { useAppDispatch } from "@/redux/hooks";
 
@@ -6,13 +6,13 @@ type TTodoCardProps = {
   id: string;
   title: string;
   description: string;
-  isCompleted: boolean;
+  isCompleted?: boolean;
 };
 const TodoCard = ({ title, description, id, isCompleted }: TTodoCardProps) => {
   const dispatch = useAppDispatch();
 
   const toggleState = () => {
-    console.log("is working");
+    dispatch(toggleComplete(id));
   };
   return (
     <div className="bg-white rounded-md flex justify-between items-center p-3">

@@ -69,7 +69,10 @@ const AddtodoModal = () => {
             />
           </div>
           <div className="flex justify-end">
-            <Button type="submit"> Save changes</Button>
+            <Button type="submit" className="bg-black text-white">
+              {" "}
+              Save changes
+            </Button>
             {/* <Label htmlFor="description" className="text-right"></Label> */}
           </div>
         </form>
