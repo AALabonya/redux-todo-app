@@ -28,6 +28,13 @@ const todoSlice = createSlice({
     toggleComplete: (state, action: PayloadAction<string>) => {
       const task = state.todos.find((item) => item.id === action.payload);
       task!.isCompleted = !task?.isCompleted;
+      // Sort todos so that completed tasks are at the bottom
+      state.todos.sort((a, b) => {
+        if (a.isCompleted === b.isCompleted) {
+          return 0; // Do not change order if both have same completion status
+        }
+        return a.isCompleted ? 1 : -1; // Move completed tasks to the bottom
+      });
     },
   },
 });
