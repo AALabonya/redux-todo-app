@@ -9,10 +9,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 interface TodoFilterProps {
-  filterValue: string;
-  setFilterValue: (value: string) => void;
+  priority: string;
+  setPriority: (value: string) => void;
 }
-export function TodoFilter({ filterValue, setFilterValue }: TodoFilterProps) {
+export function TodoFilter({ priority, setPriority }: TodoFilterProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,10 +21,7 @@ export function TodoFilter({ filterValue, setFilterValue }: TodoFilterProps) {
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup
-          value={filterValue}
-          onValueChange={setFilterValue}
-        >
+        <DropdownMenuRadioGroup value={priority} onValueChange={setPriority}>
           <DropdownMenuRadioItem value="high">High</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="medium">Medium</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="low">Low</DropdownMenuRadioItem>
