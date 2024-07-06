@@ -8,9 +8,11 @@ export const baseApi = createApi({
     //query holo get korar jonno
     //post korar jonno muation
     getTodos: builder.query({
-      query: () => ({
-        url: "/tasks",
+      query: (priority) => ({
+        url: `/tasks?priority=${priority}`,
         method: "GET",
+        //better approach
+        // params:{priority}
       }),
       providesTags: ["todo"],
     }),
