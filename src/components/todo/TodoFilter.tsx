@@ -8,21 +8,23 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useState } from "react";
-
-export function TodoFilter() {
-  const [position, setPosition] = useState("bottom");
+interface TodoFilterProps {
+  filterValue: string;
+  setFilterValue: (value: string) => void;
+}
+export function TodoFilter({ filterValue, setFilterValue }: TodoFilterProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="bg-primary-gradient p-2 rounded-lg text-white">
-          Filter
-        </Button>
+        <Button variant="default">Filter</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56  bg-white">
-        <DropdownMenuLabel>Filter by priority</DropdownMenuLabel>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+        <DropdownMenuRadioGroup
+          value={filterValue}
+          onValueChange={setFilterValue}
+        >
           <DropdownMenuRadioItem value="high">High</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="medium">Medium</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="low">Low</DropdownMenuRadioItem>
