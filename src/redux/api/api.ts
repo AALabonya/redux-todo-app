@@ -13,13 +13,13 @@ export const baseApi = createApi({
       }),
     }),
     addTodo: builder.mutation({
-      query: (categoryName) => ({
-        url: "/tasks",
-        method: "POST",
-        data: { category: categoryName },
-      }),
+      query: (data) => {
+        console.log("inside", data);
+
+        return { url: "/task", method: "POST", body: data };
+      },
     }),
   }),
 });
 
-export const { useGetTodosQuery } = baseApi;
+export const { useGetTodosQuery, useAddTodoMutation } = baseApi;

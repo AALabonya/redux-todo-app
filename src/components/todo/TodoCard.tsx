@@ -7,8 +7,15 @@ type TTodoCardProps = {
   title: string;
   description: string;
   isCompleted?: boolean;
+  priority: string;
 };
-const TodoCard = ({ title, description, id, isCompleted }: TTodoCardProps) => {
+const TodoCard = ({
+  title,
+  description,
+  id,
+  isCompleted,
+  priority,
+}: TTodoCardProps) => {
   const dispatch = useAppDispatch();
 
   const toggleState = () => {
@@ -32,6 +39,7 @@ const TodoCard = ({ title, description, id, isCompleted }: TTodoCardProps) => {
         )}
       </div>
       <p>{description}</p>
+      <p>{priority}</p>
       <div className="flex gap-5">
         <Button onClick={() => dispatch(removeTodo(id))}>del</Button>
         <Button>edit</Button>

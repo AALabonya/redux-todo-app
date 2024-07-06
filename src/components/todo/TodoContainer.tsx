@@ -29,8 +29,8 @@ const TodoContainer = () => {
           <p>There is task pending</p>
         </div> */}
 
-        {todos.map((item) => (
-          <TodoCard {...item} />
+        {todos?.data.map((item) => (
+          <TodoCard key={item._id} {...item} />
         ))}
       </div>
     </div>
